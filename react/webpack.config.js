@@ -10,10 +10,10 @@ const path = require('path');
 let config = {
   target: 'web',
 
-  entry: './public/react/client/index.jsx',
+  entry: './react/client/index.jsx',
 
   output: {
-    path: path.join(process.cwd(), '/public/react/client/index.jsx'),
+    path: path.join(process.cwd(), '/react/client/index.jsx'),
     pathInfo: true,
     publicPath: 'http://localhost:3001/client/',
     filename: 'main.js'

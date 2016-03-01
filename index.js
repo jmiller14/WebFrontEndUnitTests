@@ -16,29 +16,7 @@ http://localhost:3000/ng
 http://localhost:3000/react`));
 
 if ('production' !== process.env.NODE_ENV) {
-  const webpack = require('webpack');
-  const WebpackDevServer = require('webpack-dev-server');
-  const reactWebpackConfig = require('./public/react/webpack.config');
-  // const ngWebpackConfig = require('./ng/webpack.config');
-  new WebpackDevServer(webpack(reactWebpackConfig), {
-    publicPath: '/client/',
-    contentBase: './public/react/client/',
-    inline: true,
-    hot: true,
-    stats: false,
-    historyApiFallback: true,
-    headers: {
-      'Access-Control-Allow-Origin': 'http://localhost:3000',
-      'Access-Control-Allow-Headers': 'X-Requested-With'
-    }
-  }).listen(3001, 'localhost', function (err) {
-    if (err) {
-      console.log(err);
-    }
-
-    console.log('react webpack server listening on localhost:3001');
-  });
-
+  require('./react');
   /*
   new WebpackDevServer(webpack(ngWebpackConfig), {
     publicPath: '/calcul/',
