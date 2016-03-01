@@ -3,8 +3,8 @@ const WebpackDevServer = require('webpack-dev-server');
 const ngWebpackConfig = require('./webpack.config');
 
 new WebpackDevServer(webpack(ngWebpackConfig), {
-  publicPath: '/ngctulator/',
-  contentBase: './ngctulator/',
+  publicPath: '/ngculator/',
+  contentBase: './ngculator/',
   inline: true,
   hot: true,
   stats: false,

@@ -10,20 +10,14 @@ const path = require('path');
 let config = {
   target: 'web',
 
-  entry: './ng/ngctulator/index.js',
-
-  output: {
-    path: path.join(process.cwd(), '/ng/ngctulator/index.js'),
-    pathInfo: true,
-    publicPath: 'http://localhost:3002/ngctulator/',
-    filename: 'main.js'
-  },
+  entry: {},
+  output: {},
 
   resolve: {
     modulesDirectories: [
       'web_modules',
       'node_modules',
-      'ngctulator',
+      'ngculator',
     ],
     extentions: ['js', 'html'],
   },
@@ -38,10 +32,6 @@ let config = {
   ],
 
   module: {
-    preLoaders: [
-      {test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/}
-    ],
-
     noParse: /\.min\.js/
   },
 
@@ -52,16 +42,25 @@ let config = {
   }
 };
 
-
 if ('test' !== process.env.NODE_ENV) {
   config.entry = [
     'webpack-dev-server/client?http://localhost:3001',
     'webpack/hot/dev-server',
-    config.entry,
+    './ng/ngculator/index.js',
   ];
-}
 
-config.devtool = 'eval-source-map';
+  config.output = {
+    path: path.join(process.cwd(), '/ng/ngculator/index.js'),
+    pathInfo: true,
+    publicPath: 'http://localhost:3002/ngculator/',
+    filename: 'main.js'
+  };
+
+  config.devtool = 'eval-source-map';
+}
+else {
+  config.devtool = 'inline-source-map';
+}
 
 config.plugins = config.plugins.concat([
   new webpack.HotModuleReplacementPlugin(),
