@@ -12,8 +12,10 @@ const app = connect();
 app.use(serveStatic('./shared-styles'));
 app.use(serveStatic('./public'));
 app.listen(3000, () => console.log(`dev server listening on localhost:3000
-http://localhost:3000/ng
-http://localhost:3000/react`));
+
+For Angular: http://localhost:3000/ng
+For React:   http://localhost:3000/react
+`));
 
 if ('production' !== process.env.NODE_ENV) {
   require('./react');
