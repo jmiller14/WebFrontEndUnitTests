@@ -3,8 +3,8 @@ const WebpackDevServer = require('webpack-dev-server');
 const reactWebpackConfig = require('./webpack.config');
 
 new WebpackDevServer(webpack(reactWebpackConfig), {
-  publicPath: '/client/',
-  contentBase: './client/',
+  publicPath: '/reactulator/',
+  contentBase: './reactulator/',
   inline: true,
   hot: true,
   stats: false,

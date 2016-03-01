@@ -10,12 +10,12 @@ const path = require('path');
 let config = {
   target: 'web',
 
-  entry: './react/client/index.jsx',
+  entry: './react/reactulator/index.jsx',
 
   output: {
-    path: path.join(process.cwd(), '/react/client/index.jsx'),
+    path: path.join(process.cwd(), '/react/reactulator/index.jsx'),
     pathInfo: true,
-    publicPath: 'http://localhost:3001/client/',
+    publicPath: 'http://localhost:3001/reactulator/',
     filename: 'main.js'
   },
 
@@ -23,7 +23,7 @@ let config = {
     modulesDirectories: [
       'web_modules',
       'node_modules',
-      'client',
+      'reactulator',
     ],
     extentions: ['js', 'jsx'],
   },
