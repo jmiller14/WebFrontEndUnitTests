@@ -6,7 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=development node .",
     "test": "echo 'run test-ng or test-react'",
-    "test-ng": "NODE_ENV=test node_modules/karma/bin/karma start ng/karma.config.js"
+    "test-ng": "NODE_ENV=test node_modules/karma/bin/karma start ng/karma.config.js",
+    "test-react": "echo 'not ready yet... sorry!'"
   },
   "repository": {
     "type": "git",
