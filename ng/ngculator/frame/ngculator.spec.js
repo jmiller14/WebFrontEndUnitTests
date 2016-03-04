@@ -1,16 +1,13 @@
 describe('NgculatorCtrl', () => {
   let $controller;
-  let $rootScope;
 
-  beforeEach(inject((_$controller_, _$rootScope_) => {
-    $rootScope = _$rootScope_;
+  beforeEach(angular.mock.module('ngculator'));
+  beforeEach(inject(_$controller_ => {
     $controller = _$controller_;
   }));
 
   function createCtrl() {
-    return $controller('NgculatorCtrl', {
-      $scope: $rootScope.$new(),
-    });
+    return $controller('NgculatorCtrl');
   }
 
   describe('calculations', () => {

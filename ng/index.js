@@ -15,7 +15,7 @@ new WebpackDevServer(webpack(ngWebpackConfig), {
   }
 }).listen(3002, 'localhost', function (err) {
   if (err) {
-    console.log(err);
+    return console.warn('ng server failed to start', err);
   }
 
   console.log('ng webpack server listening on localhost:3002');

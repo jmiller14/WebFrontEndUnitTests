@@ -2,14 +2,20 @@ const path = require('path');
 
 module.exports = config => config.set({
   frameworks: ['jasmine', 'chai-sinon'],
-  reporters: ['progress'],
-  files: ['ngculator/index.js', 'test.webpack.js'],
+  reporters: ['progress', 'coverage'],
+  files: ['test.webpack.js'],
   preprocessors: {
-    'ngculator/index.js': ['webpack'],
-    'test.webpack.js': ['webpack'],
+    'test.webpack.js': ['webpack', 'sourcemap'],
   },
-  browsers: ['PhantomJS2'],
+  browsers: ['PhantomJS'],
   webpack: require('./webpack.config'),
+  coverageReporter: {
+    dir: 'coverage/',
+    reporters: [
+      {type: 'text-summary'},
+      {type: 'html'},
+    ],
+  },
   webpackMiddleware: {
     noInfo: 'errors-only',
   },

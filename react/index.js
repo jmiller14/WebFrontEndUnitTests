@@ -15,7 +15,7 @@ new WebpackDevServer(webpack(reactWebpackConfig), {
   }
 }).listen(3001, 'localhost', function (err) {
   if (err) {
-    console.log(err);
+    return console.warn('react server failed to start', err);
   }
 
   console.log('react webpack server listening on localhost:3001');

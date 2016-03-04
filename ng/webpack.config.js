@@ -57,14 +57,31 @@ if ('test' !== process.env.NODE_ENV) {
   };
 
   config.devtool = 'eval-source-map';
+
+  config.plugins = config.plugins.concat([
+    new webpack.HotModuleReplacementPlugin(),
+  ]);
 }
 else {
+  config.module.preLoaders = [{
+    test: /\.js$/,
+    exclude: [
+      /node_modules/,
+      /test.webpack.js/,
+      /\.spec\.js$/,
+    ],
+    loader: 'isparta-instrumenter',
+    query: {
+      babel: {
+        presets: ['es2015', 'angular']
+      },
+    },
+  }];
   config.devtool = 'inline-source-map';
+
+  config.plugins = [];
 }
 
-config.plugins = config.plugins.concat([
-  new webpack.HotModuleReplacementPlugin(),
-]);
 
 config.module.loaders = [
   {test: /\.js$/, loaders: ['ng-annotate', 'babel?presets[]=es2015&presets[]=angular'], exclude: /node_modules/},
