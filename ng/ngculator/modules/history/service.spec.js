@@ -13,13 +13,13 @@ describe('calculatorHistory', () => {
   });
 
   describe('length', () => {
-    it('should be initialised to 1', () => {
-      expect(history.length).toBe(1);
+    it('should be initialised to 5', () => {
+      expect(history.length).toBe(5);
     });
 
-    it('should increase when items are added', () => {
+    it('should remain the same as new items are added', () => {
       history.push(2);
-      expect(history.length).toBe(2);
+      expect(history.length).toBe(5);
     });
   });
 
@@ -28,7 +28,7 @@ describe('calculatorHistory', () => {
       let pushedValue = {};
 
       history.push(pushedValue);
-      expect(history.length).toBe(2);
+      expect(history.length).toBe(5);
       expect(history.last[0]).toBe(pushedValue);
     });
 
@@ -56,11 +56,9 @@ describe('calculatorHistory', () => {
 
   describe('clear()', () => {
     it('should reset the history', () => {
-      expect(history.length).toBe(1);
       history.push(1);
-      expect(history.length).toBe(2);
       history.clear();
-      expect(history.length).toBe(1);
+      expect(history.last).toEqual([0,0,0,0,0]);
     });
   });
 
@@ -74,7 +72,6 @@ describe('calculatorHistory', () => {
       history.push(OLDER);
       history.push(LATEST);
 
-      expect(history.last.length).toBe(4);
       expect(history.last[0]).toBe(LATEST);
       expect(history.last[1]).toBe(OLDER);
       expect(history.last[2]).toBe(OLDEST);

@@ -9,6 +9,10 @@ class CalculatorHistory {
     this.clear();
   }
 
+  clear () {
+    this._history = [0, 0, 0, 0, 0];
+  }
+
   push (element) {
     this._history.unshift(element);
 
@@ -20,16 +24,12 @@ class CalculatorHistory {
     return this;
   }
 
-  get length () {
-    return this._history.length;
-  }
-
-  clear () {
-    this._history = [0];
-  }
-
   get last () {
     return this._history;
+  }
+
+  get length () {
+    return this._history.length;
   }
 }
 

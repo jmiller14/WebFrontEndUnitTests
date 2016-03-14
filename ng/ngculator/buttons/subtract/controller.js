@@ -1,5 +1,4 @@
 import angular from 'angular';
-import template from '../button-template.html';
 
 const app = angular.module('ngculator');
 
@@ -17,15 +16,4 @@ app.controller('SubtractCtrl', function (history, calcInput) {
     this.result = +history.last[0] - +calcInput.value;
     history.push(this.result);
   };
-});
-
-/**
- * mbSubtractButton Compoent
- * Subtraction button component
- *
- * @class mbSubtractButton
- */
-app.component('mbSubtractButton', {
-  template: template,
-  controller: 'SubtractCtrl',
 });

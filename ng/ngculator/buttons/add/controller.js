@@ -1,5 +1,6 @@
+'use strict';
+
 import angular from 'angular';
-import template from '../button-template.html';
 
 const app = angular.module('ngculator');
 
@@ -17,15 +18,4 @@ app.controller('AddCtrl', function (history, calcInput) {
     this.result = +calcInput.value + +history.last[0];
     history.push(this.result);
   };
-});
-
-/**
- * mbAddButton Compoent
- * Add button component
- *
- * @class mbAddButton
- */
-app.component('mbAddButton', {
-  template: template,
-  controller: 'AddCtrl',
 });
