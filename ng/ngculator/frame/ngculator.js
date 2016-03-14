@@ -3,15 +3,10 @@ import ngculatorTpl from './ngculator.html';
 
 const app = angular.module('ngculator');
 
-app.controller('NgculatorCtrl', function () {
-  this.result = '';
-
-  this.add = (a, b) => {
-    this.result = +a + +b;
-  };
-
+app.controller('NgculatorCtrl', function (history, calcInput) {
   this.clear = () => {
-    this.result = '';
+    history.clear();
+    calcInput.clear();
   };
 });
 
