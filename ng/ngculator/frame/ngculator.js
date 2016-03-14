@@ -3,9 +3,9 @@ import ngculatorTpl from './ngculator.html';
 
 const app = angular.module('ngculator');
 
-app.controller('NgculatorCtrl', function (history, calcInput) {
+app.controller('NgculatorCtrl', function (calcHistory, calcInput) {
   this.clear = () => {
-    history.clear();
+    calcHistory.clear();
     calcInput.clear();
   };
 });

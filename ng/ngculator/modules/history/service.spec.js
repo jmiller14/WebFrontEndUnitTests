@@ -1,25 +1,25 @@
 'use strict';
 
-describe('calculatorHistory', () => {
-  let history;
+describe('calculatorcalcHistory', () => {
+  let calcHistory;
 
   beforeEach(angular.mock.module('ngculator'));
-  beforeEach(inject(_history_ => {
-    history = _history_;
+  beforeEach(inject(_calcHistory_ => {
+    calcHistory = _calcHistory_;
   }));
 
   beforeEach(() => {
-    history.clear();
+    calcHistory.clear();
   });
 
   describe('length', () => {
     it('should be initialised to 5', () => {
-      expect(history.length).toBe(5);
+      expect(calcHistory.length).toBe(5);
     });
 
     it('should remain the same as new items are added', () => {
-      history.push(2);
-      expect(history.length).toBe(5);
+      calcHistory.push(2);
+      expect(calcHistory.length).toBe(5);
     });
   });
 
@@ -27,12 +27,12 @@ describe('calculatorHistory', () => {
     it('should push values to the internal array', () => {
       let pushedValue = {};
 
-      history.push(pushedValue);
-      expect(history.length).toBe(5);
-      expect(history.last[0]).toBe(pushedValue);
+      calcHistory.push(pushedValue);
+      expect(calcHistory.length).toBe(5);
+      expect(calcHistory.last[0]).toBe(pushedValue);
     });
 
-    it('should should save no more than 5 history values', () => {
+    it('should should save no more than 5 calcHistory values', () => {
       const FIRST = {};
       const SECOND = {};
       const THIRD = {};
@@ -40,41 +40,41 @@ describe('calculatorHistory', () => {
       const FIFTH = {};
       const SIXTH = {};
 
-      history.push(FIRST);
-      history.push(SECOND);
-      history.push(THIRD);
-      history.push(FOURTH);
-      history.push(FIFTH);
-      history.push(SIXTH);
+      calcHistory.push(FIRST);
+      calcHistory.push(SECOND);
+      calcHistory.push(THIRD);
+      calcHistory.push(FOURTH);
+      calcHistory.push(FIFTH);
+      calcHistory.push(SIXTH);
 
-      expect(history.length).toBe(5);
-      expect(history.last[0]).toBe(SIXTH);
-      expect(history.last[4]).toBe(SECOND);
-      expect(history.last.indexOf(FIRST)).toBe(-1);
+      expect(calcHistory.length).toBe(5);
+      expect(calcHistory.last[0]).toBe(SIXTH);
+      expect(calcHistory.last[4]).toBe(SECOND);
+      expect(calcHistory.last.indexOf(FIRST)).toBe(-1);
     });
   });
 
   describe('clear()', () => {
-    it('should reset the history', () => {
-      history.push(1);
-      history.clear();
-      expect(history.last).toEqual([0,0,0,0,0]);
+    it('should reset the calcHistory', () => {
+      calcHistory.push(1);
+      calcHistory.clear();
+      expect(calcHistory.last).toEqual([0,0,0,0,0]);
     });
   });
 
   describe('last', () => {
-    it('should return an array represtation of the history ordered from latest to oldest', () => {
+    it('should return an array represtation of the calcHistory ordered from latest to oldest', () => {
       const OLDEST = {};
       const OLDER = {};
       const LATEST = {};
 
-      history.push(OLDEST);
-      history.push(OLDER);
-      history.push(LATEST);
+      calcHistory.push(OLDEST);
+      calcHistory.push(OLDER);
+      calcHistory.push(LATEST);
 
-      expect(history.last[0]).toBe(LATEST);
-      expect(history.last[1]).toBe(OLDER);
-      expect(history.last[2]).toBe(OLDEST);
+      expect(calcHistory.last[0]).toBe(LATEST);
+      expect(calcHistory.last[1]).toBe(OLDER);
+      expect(calcHistory.last[2]).toBe(OLDEST);
     });
   });
 });

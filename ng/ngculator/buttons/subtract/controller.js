@@ -8,12 +8,12 @@ const app = angular.module('ngculator');
  *
  * @class SubtractCtrl
  */
-app.controller('SubtractCtrl', function (history, calcInput) {
+app.controller('SubtractCtrl', function (calcHistory, calcInput) {
   this.result = '';
   this.label = '-';
 
   this.calc = () => {
-    this.result = +history.last[0] - +calcInput.value;
-    history.push(this.result);
+    this.result = +calcHistory.last[0] - +calcInput.value;
+    calcHistory.push(this.result);
   };
 });

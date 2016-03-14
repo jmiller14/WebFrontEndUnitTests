@@ -10,12 +10,12 @@ const app = angular.module('ngculator');
  *
  * @class AddCtrl
  */
-app.controller('AddCtrl', function (history, calcInput) {
+app.controller('AddCtrl', function (calcHistory, calcInput) {
   this.result = '';
   this.label = '+';
 
   this.calc = () => {
-    this.result = +calcInput.value + +history.last[0];
-    history.push(this.result);
+    this.result = +calcInput.value + +calcHistory.last[0];
+    calcHistory.push(this.result);
   };
 });

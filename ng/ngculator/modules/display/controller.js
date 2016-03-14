@@ -6,10 +6,10 @@ const app = angular.module('ngculator');
 
 /**
  * DisplayCtrl Controller
- * Makes history available to mbDisplay
+ * Makes calcHistory available to mbDisplay
  *
  * @class DisplayCtrl
  */
-app.controller('DisplayCtrl', function (history) {
-  this.history = history;
+app.controller('DisplayCtrl', function (calcHistory) {
+  this.history = calcHistory;
 });

@@ -4,7 +4,7 @@ import angular from 'angular';
 
 const app = angular.module('ngculator');
 
-class CalculatorHistory {
+class CalculatorcalcHistory {
   constructor () {
     this.clear();
   }
@@ -16,7 +16,7 @@ class CalculatorHistory {
   push (element) {
     this._history.unshift(element);
 
-    // TODO: perhaps add a maximum history size option
+    // TODO: perhaps add a maximum calcHistory size option
     if (this._history.length > 5) {
       this._history.pop();
     }
@@ -34,9 +34,9 @@ class CalculatorHistory {
 }
 
 /**
- * history Service
- * Stores the history values from the calculator
+ * calcHistory Service
+ * Stores the calcHistory values from the calculator
  *
- * @class history
+ * @class calcHistory
  */
-app.service('history', CalculatorHistory);
+app.service('calcHistory', CalculatorcalcHistory);
