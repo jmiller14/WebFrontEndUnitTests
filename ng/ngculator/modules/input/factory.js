@@ -11,10 +11,8 @@ const app = angular.module('ngculator');
  * @class calcInput
  */
 app.factory('calcInput', function () {
-  let value = 0;
-
   const calcInput = {
-    value,
+    value: 0,
     clear: () => {
       calcInput.value = 0;
 
