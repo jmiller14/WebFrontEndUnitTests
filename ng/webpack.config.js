@@ -68,7 +68,7 @@ else {
     exclude: [
       /node_modules/,
       /test.webpack.js/,
-      /spec\.js$/,
+      /\.spec\.js$/,
     ],
     loader: 'isparta-instrumenter',
     query: {
