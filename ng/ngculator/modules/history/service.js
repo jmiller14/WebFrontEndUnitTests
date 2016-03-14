@@ -1,37 +1,52 @@
 'use strict';
 
 import angular from 'angular';
+import WeakMap from 'es6-weak-map';
 
 const app = angular.module('ngculator');
 
-class CalculatorcalcHistory {
-  constructor () {
-    this.clear();
-  }
+let CalculatorcalcHistory = (function () {
+  const privateProps = new WeakMap();
 
-  clear () {
-    this._history = [0, 0, 0, 0, 0];
-  }
-
-  push (element) {
-    this._history.unshift(element);
-
-    // TODO: perhaps add a maximum calcHistory size option
-    if (this._history.length > 5) {
-      this._history.pop();
+  class CalculatorcalcHistory {
+    constructor () {
+      this.clear();
     }
 
-    return this;
+    clear () {
+      privateProps.set(this, {
+        _history: [0, 0, 0, 0, 0]
+      });
+    }
+
+    push (element) {
+      const _history = privateProps.get(this)._history;
+
+      _history.unshift(element);
+
+      // TODO: perhaps add a maximum calcHistory size option
+      if (_history.length > 5) {
+        _history.pop();
+      }
+
+      return this;
+    }
+
+    get last () {
+      const _history = privateProps.get(this)._history;
+
+      return _history.slice();
+    }
+
+    get length () {
+      const _history = privateProps.get(this)._history;
+
+      return _history.length;
+    }
   }
 
-  get last () {
-    return this._history;
-  }
-
-  get length () {
-    return this._history.length;
-  }
-}
+  return CalculatorcalcHistory;
+})();
 
 /**
  * calcHistory Service
