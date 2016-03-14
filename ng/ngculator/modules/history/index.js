@@ -5,11 +5,11 @@ import angular from 'angular';
 const app = angular.module('ngculator');
 
 class CalculatorHistory {
-  constructor() {
+  constructor () {
     this.clear();
   }
 
-  push(element) {
+  push (element) {
     this._history.unshift(element);
 
     // TODO: perhaps add a maximum history size option
@@ -20,15 +20,15 @@ class CalculatorHistory {
     return this;
   }
 
-  get length() {
+  get length () {
     return this._history.length;
   }
 
-  clear() {
+  clear () {
     this._history = [0];
   }
 
-  get last() {
+  get last () {
     return this._history;
   }
 }
