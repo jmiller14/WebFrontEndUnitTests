@@ -106,13 +106,13 @@ are required only to build the app.
 ### What about our own modules?
 We also need to know about the files for our app:
 
-* index.js: runs the dev server
-* shared-styles: CSS that can be used by both apps, so we
+* `index.js`: runs the dev server
+* `shared-styles`: CSS that can be used by both apps, so we
  just put it in one spot
-* public: folder that just has html to serve the app files.
+* `public`: folder that just has html to serve the app files.
  We should rarely need to touch this
-* ng: The Angular app files
-* react: The React app files
+* `ng`: The Angular app files
+* `react`: The React app files
 
 ### Two apps in one?
 For convenience, this project has two separate apps under
@@ -148,6 +148,10 @@ There are a few files we should know about:
  configuration. This does whatever work we need to
  bootstrap our tests including loading ngMocks and the
  module that we need to test, `ngculator`.
+
+### Adding buttons
+
+To add a button, create a module in the `ng/ngculator/buttons` directory, including the spec.
 
 ### Testing React
 TODO...
