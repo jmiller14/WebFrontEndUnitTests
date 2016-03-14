@@ -1,15 +1,17 @@
+'use strict';
+
 import angular from 'angular';
 import template from '../button.html';
 
 const app = angular.module('ngculator');
 
 /**
- * mbSubtractButton Compoent
+ * ncSubtractButton Compoent
  * Subtraction button component
  *
- * @class mbSubtractButton
+ * @class ncSubtractButton
  */
-app.component('mbSubtractButton', {
+app.component('ncSubtractButton', {
   template: template,
   controller: 'SubtractCtrl',
 });

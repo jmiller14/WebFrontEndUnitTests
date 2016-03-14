@@ -6,10 +6,10 @@ import template from './nc-display.html';
 const app = angular.module('ngculator');
 
 /**
- * mbDisplay Component
+ * ncDisplay Component
  * Displays the last 5 values
  *
- * @class DisplayCtrl
+ * @class ncDisplay
  */
 app.component('ncDisplay', {
   template: template,

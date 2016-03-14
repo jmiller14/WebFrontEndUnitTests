@@ -6,12 +6,12 @@ import template from '../button.html';
 const app = angular.module('ngculator');
 
 /**
- * mbAddButton Component
+ * ncAddButton Component
  * Add button component
  *
  * @class mbAddButton
  */
-app.component('mbAddButton', {
+app.component('ncAddButton', {
   template: template,
   controller: 'AddCtrl',
 });
