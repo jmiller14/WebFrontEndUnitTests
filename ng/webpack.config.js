@@ -73,7 +73,8 @@ else {
     loader: 'isparta-instrumenter',
     query: {
       babel: {
-        presets: ['es2015', 'angular']
+        presets: ['es2015', 'angular'],
+        plugins: ['lodash']
       },
     },
   }];
