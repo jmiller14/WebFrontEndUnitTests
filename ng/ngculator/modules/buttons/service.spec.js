@@ -50,13 +50,12 @@ describe('calcButtons', () => {
     calc: STRING
   };
 
-
-
   let calcButtons;
 
   beforeEach(angular.mock.module('ngculator'));
   beforeEach(inject((_calcButtons_) => {
     calcButtons = _calcButtons_;
+    calcButtons.clear();
   }));
 
   afterEach(() => calcButtons.clear());
