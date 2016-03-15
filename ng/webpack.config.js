@@ -73,8 +73,7 @@ else {
     loader: 'isparta-instrumenter',
     query: {
       babel: {
-        presets: ['es2015', 'angular'],
-        plugins: ['lodash']
+        presets: ['es2015', 'angular']
       },
     },
   }];
@@ -85,7 +84,7 @@ else {
 
 
 config.module.loaders = [
-  {test: /\.js$/, loaders: ['ng-annotate', 'babel?presets[]=es2015&presets[]=angular'], exclude: /node_modules/},
+  {test: /\.js$/, loaders: ['ng-annotate', 'babel?presets[]=es2015&presets[]=angular&plugins[]=lodash'], exclude: /node_modules/},
   {test: /\.html$/, loaders: ['html']},
 ];
 
