@@ -24,6 +24,10 @@ describe('calculatorcalcHistory', () => {
   });
 
   describe('push()', () => {
+    it('should throw a ReferenceError when called with no parameters', () => {
+      expect(calcHistory.push.bind(calcHistory)).toThrowError(ReferenceError);
+    });
+
     it('should push values to the internal array', () => {
       let pushedValue = {};
 

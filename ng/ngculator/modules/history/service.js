@@ -22,12 +22,12 @@ let CalculatorcalcHistory = (function () {
     push (element) {
       const _history = privateProps.get(this)._history;
 
-      _history.unshift(element);
-
-      // TODO: perhaps add a maximum calcHistory size option
-      if (_history.length > 5) {
-        _history.pop();
+      if (_.isUndefined(element)) {
+        throw new ReferenceError('Missing element to push to history.');
       }
+
+      _history.unshift(element);
+      _history.pop();
 
       return this;
     }
