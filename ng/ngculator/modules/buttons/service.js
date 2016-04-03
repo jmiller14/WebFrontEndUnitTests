@@ -72,7 +72,7 @@ let CalculatorButtons = (function () {
 
       // Prevent duplicates
       if (_buttons[button.name]) {
-        throw new Error(`Button with name ${name} already exists.`);
+        throw new Error(`Button with name ${button.name} already exists.`);
       }
 
       _buttons[button.name] = button;
