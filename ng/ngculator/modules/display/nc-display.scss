@@ -3,7 +3,12 @@ nc-display {
 
   @for $n from 0 through 4 {
     @at-root #display__history-#{$n} {
-      color: lighten($base-color, 80% -  15% * $n);
+      color: lighten($base-color, 75% -  15% * $n);
+
+      @if ($n == 4) {
+        font-size: 1.5em;
+        color: $base-color
+      }
     }
   }
 }
