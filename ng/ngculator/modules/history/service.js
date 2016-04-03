@@ -2,6 +2,7 @@
 
 import angular from 'angular';
 import WeakMap from 'es6-weak-map';
+import _ from 'lodash';
 
 const app = angular.module('ngculator');
 
