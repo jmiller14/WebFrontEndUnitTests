@@ -6,6 +6,9 @@
 
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const cssExtractor = new ExtractTextPlugin('public/ng/main.css');
 
 let config = {
   target: 'web',
@@ -29,6 +32,7 @@ let config = {
       __PRODUCTION__: 'production' === process.env.NODE_ENV,
       __CURRENT_ENV__: '\'' + (process.env.NODE_ENV) + '\'',
     }),
+    cssExtractor,
   ],
 
   module: {
@@ -56,10 +60,11 @@ if ('test' !== process.env.NODE_ENV) {
     filename: 'main.js'
   };
 
-  config.devtool = 'eval-source-map';
+  config.devtool = 'source-map';
 
   config.plugins = config.plugins.concat([
     new webpack.HotModuleReplacementPlugin(),
+    cssExtractor
   ]);
 }
 else {
@@ -77,15 +82,19 @@ else {
       },
     },
   }];
-  config.devtool = 'inline-source-map';
+  config.devtool = 'source-map';
 
-  config.plugins = [];
+  config.plugins = [
+    cssExtractor
+  ];
 }
 
 
 config.module.loaders = [
   {test: /\.js$/, loaders: ['ng-annotate', 'babel?presets[]=es2015&presets[]=angular&plugins[]=lodash'], exclude: /node_modules/},
   {test: /\.html$/, loaders: ['html']},
+  {test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap']},
+  {test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/, loader: 'file'},
 ];
 
 module.exports = config;
