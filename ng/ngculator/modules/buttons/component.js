@@ -3,6 +3,9 @@
 import angular from 'angular';
 import template from './nc-button.html';
 
+// inlcude styles
+import './nc-button.scss';
+
 const app = angular.module('ngculator');
 
 /**

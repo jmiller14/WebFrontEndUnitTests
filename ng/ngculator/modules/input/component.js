@@ -3,6 +3,9 @@
 import angular from 'angular';
 import template from './nc-input.html';
 
+// include styles
+import './nc-input.scss'
+
 const app = angular.module('ngculator');
 
 /**

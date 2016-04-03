@@ -1,0 +1,7 @@
+ngculator {
+  $clear-button-margin: 0.2em;
+
+  @at-root #clear-button {
+    margin-top: $clear-button-margin;
+  }
+}

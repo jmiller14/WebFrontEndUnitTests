@@ -1,0 +1,9 @@
+nc-display {
+  $base-color: black;
+
+  @for $n from 0 through 4 {
+    @at-root #display__history-#{$n} {
+      color: lighten($base-color, 80% -  15% * $n);
+    }
+  }
+}

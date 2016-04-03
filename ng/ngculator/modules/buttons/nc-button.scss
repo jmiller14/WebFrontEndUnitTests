@@ -1,0 +1,20 @@
+nc-button {
+  $button-width: 2.0em;
+  $button-margin: 0.1em;
+  $font-size: 1.5em;
+
+  > button {
+    width: $button-width;
+    height: $button-width;
+    margin: $button-margin;
+    font-size: $font-size;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0
+    }
+  }
+}

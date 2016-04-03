@@ -1,0 +1,10 @@
+nc-input {
+  $margin-width: 0.2em;
+  $font-size: 2.0em;
+
+  input {
+    font-size: $font-size;
+    margin-top: $margin-width;
+    margin-bottom: $margin-width;
+  }
+}
