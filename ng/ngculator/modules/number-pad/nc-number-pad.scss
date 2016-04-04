@@ -1,7 +1,11 @@
 nc-number-pad {
-  $button-width: 2.0em;
-  $button-margin: 0.1em;
-  $font-size: 1.5em;
+  $button-width: 2.0rem;
+  $button-margin: 0.1rem;
+  $font-size: 1.5rem;
+
+  > div {
+    display: flex;
+  }
 
   button {
     width: $button-width;
