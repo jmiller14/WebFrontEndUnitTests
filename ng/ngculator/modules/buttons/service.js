@@ -126,13 +126,16 @@ let CalculatorButtons = (function () {
 
       const button = _buttons[name];
 
+      calcInput.calcWasPressed = true;
+
       if (!button) {
         return null;
       }
 
       const result = button.calc(storedValue, enteredValue);
 
-      calcHistory.push(result);
+      calcHistory.push(calcInput.value);
+      calcInput.value = result
 
       return result;
     }

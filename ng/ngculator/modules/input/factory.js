@@ -40,20 +40,28 @@ app.factory('calcInput', function () {
 
     nextIsDecimal: false,
 
+    calcWasPressed: false,
+
     addDigit: (digit) => {
+      const shouldStartOver = calcInput.value == 0 || calcInput.calcWasPressed;
+
       if (!digit.toString().match(/^[0-9\.-]$/)) {
         throw new Error('Invalid digit.');
       }
 
       if (_.isNumber(digit)) {
-        if (calcInput.value == 0) {
-          return calcInput.value = digit;
+        if (shouldStartOver) {
+          calcInput.value = '';
         }
+
         calcInput.value = calcInput.value + (calcInput.nextIsDecimal ? '.' : '') + digit;
+
+        // Prepend input string with a zero, if it starts witha decimal point.
+        calcInput.value = calcInput.value.substring(0,1) === '.' ? 0 + calcInput.value : calcInput.value;
         calcInput.nextIsDecimal = false;
+        calcInput.calcWasPressed = false;
 
         return
-
       } else if (digit === '-') {
         return calcInput.value = 0 - calcInput.value;
       } else if (digit  === '.' && calcInput.isInteger()) {
