@@ -135,7 +135,7 @@ let CalculatorButtons = (function () {
       const result = button.calc(storedValue, enteredValue);
 
       calcHistory.push(calcInput.value);
-      calcInput.value = result
+      calcInput.value = result;
 
       return result;
     }

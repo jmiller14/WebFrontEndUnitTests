@@ -22,8 +22,6 @@ app.factory('calcInput', function () {
      */
     clear: () => {
       calcInput.value = 0;
-
-      return calcInput;
     },
 
     /**

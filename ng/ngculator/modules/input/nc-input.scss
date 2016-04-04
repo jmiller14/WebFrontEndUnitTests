@@ -1,10 +1,12 @@
 nc-input {
   $margin-width: 0.2em;
   $font-size: 2.0em;
+  $input-width: 26rem;
 
   input {
     font-size: $font-size;
     margin-top: $margin-width;
     margin-bottom: $margin-width;
+    width: $input-width;
   }
 }
