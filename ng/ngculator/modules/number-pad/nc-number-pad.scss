@@ -1,0 +1,24 @@
+nc-number-pad {
+  $button-width: 3.0rem;
+  $button-margin: 0.5rem;
+  $font-size: 1.5rem;
+
+  > div {
+    display: flex;
+  }
+
+  button {
+    width: $button-width;
+    height: $button-width;
+    margin: $button-margin;
+    font-size: $font-size;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0
+    }
+  }
+}

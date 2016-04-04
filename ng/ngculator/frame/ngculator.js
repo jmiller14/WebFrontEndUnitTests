@@ -1,17 +1,14 @@
 import angular from 'angular';
 import ngculatorTpl from './ngculator.html';
 
+import './ngculator.scss';
+
 const app = angular.module('ngculator');
 
-app.controller('NgculatorCtrl', function () {
-  this.result = '';
-
-  this.add = (a, b) => {
-    this.result = +a + +b;
-  };
-
+app.controller('NgculatorCtrl', function (calcHistory, calcInput) {
   this.clear = () => {
-    this.result = '';
+    calcHistory.clear();
+    calcInput.clear();
   };
 });
 

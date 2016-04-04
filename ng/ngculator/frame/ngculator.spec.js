@@ -1,33 +1,25 @@
 describe('NgculatorCtrl', () => {
   let $controller;
+  let controller;
+
+  let calcInput, calcHistory;
 
   beforeEach(angular.mock.module('ngculator'));
-  beforeEach(inject(_$controller_ => {
+  beforeEach(inject((_$controller_, _calcInput_, _calcHistory_) => {
     $controller = _$controller_;
+    controller = $controller('NgculatorCtrl');
+    calcInput = _calcInput_;
+    calcHistory = _calcHistory_;
   }));
-
-  function createCtrl() {
-    return $controller('NgculatorCtrl');
-  }
-
-  describe('calculations', () => {
-    it('adds two numbers', () => {
-      const controller = createCtrl();
-
-      controller.add(1, 2);
-
-      expect(controller.result).toEqual(3);
-    });
-  });
 
   describe('clear', () => {
     it('clears result', () => {
-      const controller = createCtrl();
-
-      controller.add(1, 2);
+      spyOn(calcHistory, 'clear');
+      spyOn(calcInput, 'clear');
       controller.clear();
 
-      expect(controller.result).toEqual('');
+      expect(calcHistory.clear).toHaveBeenCalled();
+      expect(calcInput.clear).toHaveBeenCalled();
     });
   });
 });

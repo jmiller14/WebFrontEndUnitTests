@@ -1,9 +1,7 @@
-Result: <input type=number readonly ng-model=$ctrl.result>
-<br>
+<nc-display></nc-display>
+<nc-input></nc-input>
 
-<input type=number ng-model=a>
-<input type=number ng-model=b>
-
-<button ng-click="$ctrl.add(a, b)">Add</button>
+<nc-button-list></nc-button-list>
+<nc-number-pad></nc-number-pad>
 <br>
-<button ng-click="$ctrl.clear()">Clear</button>
+<button id=clear-button ng-click="$ctrl.clear()">Clear</button>
