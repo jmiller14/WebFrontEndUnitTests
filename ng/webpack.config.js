@@ -93,7 +93,7 @@ else {
 config.module.loaders = [
   {test: /\.js$/, loaders: ['ng-annotate', 'babel?presets[]=es2015&presets[]=angular&plugins[]=lodash'], exclude: /node_modules/},
   {test: /\.html$/, loaders: ['html']},
-  {test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap']},
+  {test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'autoprefixer', 'sass?sourceMap']},
   {test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/, loader: 'file'},
 ];
 
