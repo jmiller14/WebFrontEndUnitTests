@@ -1,7 +1,12 @@
 # Web Frontend Unit Testing Mobiquity Practices
 
-This repo contains two separate projects: One written
-in React and one written in AngularJS.
+This repository is an example and teaching tool for the
+creation of web frontend unit tests with AngularJS (v1).
+
+The point of this repository is not necessarily show how to
+create and test an AngularJS app specifically, but to show
+examples of tools and processes used for creating unit
+tests with web frontend apps.
 
 ## Installation
 
