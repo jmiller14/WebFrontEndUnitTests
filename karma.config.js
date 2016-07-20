@@ -13,8 +13,10 @@ module.exports = config => config.set({
         "ngculator/**/*.test.js",
         "ngculator/**/*.html",
     ],
+    exclude: [
+        "ngculator/dist/**/*",
+    ],
     logLevel: config.LOG_INFO,
-    autoWatch: true,
     plugins: [
         "karma-mocha",
         "karma-chai-sinon",
