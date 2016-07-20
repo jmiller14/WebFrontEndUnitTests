@@ -22,7 +22,7 @@ const paths = {
 
 gulp.task("default", ["watch", "serve"]);
 
-gulp.task("build", ["clean"], () => gulp
+gulp.task("build", ["lint"], () => gulp
     .src(paths.app)
     .pipe(sourcemaps.init())
     .pipe(babel({
@@ -38,11 +38,11 @@ gulp.task("build", ["clean"], () => gulp
 
 gulp.task("serve", serve("ngculator"));
 
-gulp.task("watch", ["build"], () => gulp.watch(paths.app, ["lint", "clean", "build"]));
+gulp.task("watch", ["build"], () => gulp.watch(paths.app, ["build"]));
 
 gulp.task("clean", done => del(["ngculator/dist/*"], done));
 
-gulp.task("lint", () => gulp
+gulp.task("lint", ["clean"], () => gulp
     .src(paths.app)
     .pipe(eslint({
         parser: "babel-eslint",

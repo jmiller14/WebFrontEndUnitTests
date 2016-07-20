@@ -10,7 +10,7 @@ module.exports = config => config.set({
         "ngculator/ngculator.js",
         "ngculator/ngculator.test.js",
         "ngculator/**/*.js",
-        "ngculator/**/*.test.es6",
+        "ngculator/**/*.test.js",
         "ngculator/**/*.html",
     ],
     logLevel: config.LOG_INFO,
@@ -18,9 +18,10 @@ module.exports = config => config.set({
     plugins: [
         "karma-mocha",
         "karma-chai-sinon",
-        "karma-phantomjs-launcher",
         "karma-ng-html2js-preprocessor",
         "karma-babel-preprocessor",
+        "karma-phantomjs-launcher",
+        "karma-coverage",
     ],
     preprocessors: {
         "ngculator/**/*.html": ["ng-html2js"],
@@ -28,7 +29,7 @@ module.exports = config => config.set({
         "ngculator/ngculator.js": ["babel"],
         "ngculator/ngculator.test.js": ["babel"],
         "ngculator/**/*.js": ["babel"],
-        "ngculator/**/*.test.es6": ["babel"],
+        "ngculator/**/*.test.js": ["babel"],
     },
     ngHtml2JsPreprocessor: {
         stripPrefix: "ngculator/",
@@ -40,4 +41,9 @@ module.exports = config => config.set({
             sourceMap: "inline",
         },
     },
+    coverageReporter: {
+        type: 'html',
+        dir: 'coverage/',
+    },
+    browsers: ["PhantomJS"]
 });

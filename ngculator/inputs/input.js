@@ -4,7 +4,7 @@ ngculator.component("ncInput", {
     controller: "NcInputController",
 });
 
-ngculator.controller("NcInputController", function () {
-    this.calculatorInput = 0;
+ngculator.controller("NcInputController", function (InputService) {
+    this.calculatorInput = InputService.input;
     this.lastOperand = null;
 });

@@ -1,1 +1,2 @@
-angular.module("ngculator").run(() => console.log("initial run block works"));
+/* dev-specific run functionality here */
+angular.module("ngculator");
