@@ -22,7 +22,7 @@ const paths = {
 
 gulp.task("default", ["watch", "serve"]);
 
-gulp.task("build", ["lint"], () => gulp
+gulp.task("build", ["clean"], () => gulp
     .src(paths.app)
     .pipe(sourcemaps.init())
     .pipe(babel({
