@@ -6,5 +6,4 @@ ngculator.component("ncInput", {
 
 ngculator.controller("NcInputController", function (InputService) {
     this.calculatorInput = InputService;
-    this.lastOperand = null;
 });
