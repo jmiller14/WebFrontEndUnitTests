@@ -54,5 +54,16 @@ describe("InputService", () => {
 
             expect(InputService.num).to.equal(1234.10305);
         });
+
+        describe("toggleSign", () => {
+            it("toggles sign", () => {
+                InputService.clear();
+                InputService.num = 1234;
+
+                InputService.toggleSign();
+
+                expect(InputService.num).to.equal(-1234);
+            });
+        });
     });
 });

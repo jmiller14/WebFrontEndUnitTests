@@ -28,4 +28,8 @@ ngculator.service("InputService", function () {
             this.num = +this.num * 10 + +num;
         }
     };
+
+    this.toggleSign = () => {
+        this.num *= -1;
+    };
 });
