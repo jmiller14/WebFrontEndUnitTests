@@ -8,5 +8,5 @@ ngculator.component("ncClear", {
 });
 
 ngculator.controller("NcClearController", function (InputService) {
-    this.click = () => InputService.clear();
+    this.click = () => InputService.clean();
 });
