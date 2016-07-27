@@ -27,6 +27,7 @@ describe("ncSign", () => {
         it("does nothing to decimal number", () => {
             InputService.clear();
             InputService.num = 1234.2;
+            InputService.decimalPlace = 2;
             const $scope = $rootScope.$new();
             const element = angular.element("<nc-decimal></nc-decimal>");
             $compile(element)($scope);

@@ -7,7 +7,6 @@ const uglify = require("gulp-uglify");
 const ngAnnotate = require("gulp-ng-annotate");
 const serve = require("gulp-serve");
 const del = require("del");
-const eslint = require("gulp-eslint");
 
 const paths = {
     app: [
@@ -41,20 +40,3 @@ gulp.task("serve", serve("ngculator"));
 gulp.task("watch", ["build"], () => gulp.watch(paths.app, ["build"]));
 
 gulp.task("clean", done => del(["ngculator/dist/*"], done));
-
-gulp.task("lint", ["clean"], () => gulp
-    .src(paths.app)
-    .pipe(eslint({
-        parser: "babel-eslint",
-        globals: [
-            'angular',
-            'console',
-        ],
-        rules: {
-            strict: 0,
-            "comma-dangle": 0,
-            "no-console": 0,
-        },
-    }))
-    .pipe(eslint.format())
-);
