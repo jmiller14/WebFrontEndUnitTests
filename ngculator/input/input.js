@@ -1,6 +1,6 @@
 const ngculator = angular.module("ngculator");
 ngculator.component("ncInput", {
-    template: `<input ng-model=$ctrl.calculatorInput.num>`,
+    template: `<input class=calc-display ng-model=$ctrl.calculatorInput.num>`,
     controller: "NcInputController",
 });
 

@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    font-size: 32px;
+    font-family: monospace;
+    -webkit-appearance: none;
+    outline: none;
+}
+body {
+    background-color: #111;
+}
+.button-row {
+    font-size: 0;
+}
+button {
+    width: 25%;
+    border: 0;
+    background-color: #EEE;
+    color: black;
+    height: auto;
+    border: 1px solid #999;
+}
+.calc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+.calc-display {
+    text-align: right;
+    color: white;
+    background-color: black;
+    border: 0;
+}
+.wide {
+    width: 50%;
+}
