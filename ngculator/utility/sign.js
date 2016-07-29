@@ -3,7 +3,7 @@
  */
 const ngculator = angular.module("ngculator");
 ngculator.component("ncSign", {
-    template: `<button ng-click=$ctrl.click()>+/-</button>`,
+    template: `<button class=utility ng-click=$ctrl.click()><span class=button-content>+/-</span></button>`,
     controller: "NcSignController",
 });
 

@@ -3,7 +3,7 @@
  */
 const ngculator = angular.module("ngculator");
 ngculator.component("ncClear", {
-    template: `<button ng-click=$ctrl.click()>AC</button>`,
+    template: `<button class=utility ng-click=$ctrl.click()><span class=button-content>AC</span></button>`,
     controller: "NcClearController",
 });
 

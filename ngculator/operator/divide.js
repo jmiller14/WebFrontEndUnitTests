@@ -5,7 +5,7 @@
  */
 const ngculator = angular.module("ngculator");
 ngculator.component("ncDivide", {
-    template: `<button ng-click=$ctrl.click()>/</button>`,
+    template: `<button class=operator ng-click=$ctrl.click()><span class=button-content>&divide;</span></button>`,
     controller: "NcDivideController",
 });
 

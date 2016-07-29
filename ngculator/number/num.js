@@ -5,7 +5,7 @@
  */
 const ngculator = angular.module("ngculator");
 ngculator.component("ncNum", {
-    template: `<button ng-click=$ctrl.click()>{{$ctrl.num}}</button>`,
+    template: `<button ng-click=$ctrl.click()><span class=button-content>{{$ctrl.num}}</span></button>`,
     controller: "NcNumController",
     bindings: {
         num: "@",

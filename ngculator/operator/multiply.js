@@ -5,7 +5,7 @@
  */
 const ngculator = angular.module("ngculator");
 ngculator.component("ncMultiply", {
-    template: `<button ng-click=$ctrl.click()>&times;</button>`,
+    template: `<button class=operator ng-click=$ctrl.click()><span class=button-content>&times;</span></button>`,
     controller: "NcMultiplyController",
 });
 

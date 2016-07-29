@@ -5,7 +5,7 @@
  */
 const ngculator = angular.module("ngculator");
 ngculator.component("ncSubtract", {
-    template: `<button ng-click=$ctrl.click()>&ndash;</button>`,
+    template: `<button class=operator ng-click=$ctrl.click()><span class=button-content>&ndash;</span></button>`,
     controller: "NcSubtractController",
 });
 
