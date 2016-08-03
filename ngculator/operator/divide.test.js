@@ -8,7 +8,7 @@ describe("ncDivide", () => {
     }));
 
     describe("click", () => {
-        it("appends sets subtract operator on click", () => {
+        it("sets division operator on click", () => {
             InputService.clear();
             const NcDivideController = $controller("NcDivideController");
 
@@ -19,7 +19,7 @@ describe("ncDivide", () => {
             expect(InputService.operation).to.exist;
         });
 
-        it("subtracts two operands on click", () => {
+        it("divides two operands on click", () => {
             InputService.clear();
             const NcDivideController = $controller("NcDivideController");
 

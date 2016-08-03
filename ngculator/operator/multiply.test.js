@@ -19,7 +19,7 @@ describe("ncMultiply", () => {
             expect(InputService.operation).to.exist;
         });
 
-        it("adds two operands on click", () => {
+        it("multiplies two operands on click", () => {
             InputService.clear();
             const NcMultiplyController = $controller("NcMultiplyController");
 
