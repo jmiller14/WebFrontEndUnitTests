@@ -4,7 +4,7 @@
   "description": "This repository is an example and teaching tool for the creation of web frontend unit tests with AngularJS (v1).",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/karma karma.config.js start",
+    "test": "node_modules/.bin/karma start karma.config.js",
     "start": "node_modules/.bin/gulp"
   },
   "repository": {
