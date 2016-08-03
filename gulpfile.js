@@ -14,14 +14,14 @@ const paths = {
         "ngculator/ngculator.devel.js",
         "!ngculator/ngculator.test.js",
         "ngculator/**/*.js",
-        "!ngculator/dist",
+        "!ngculator/dist/**/*.js",
         "!ngculator/**/*.test.js",
     ],
 };
 
 gulp.task("default", ["watch", "serve"]);
 
-gulp.task("build", ["clean"], () => gulp
+gulp.task("build", () => gulp
     .src(paths.app)
     .pipe(sourcemaps.init())
     .pipe(babel({
@@ -37,6 +37,10 @@ gulp.task("build", ["clean"], () => gulp
 
 gulp.task("serve", serve("ngculator"));
 
-gulp.task("watch", ["build"], () => gulp.watch(paths.app, ["build"]));
+gulp.task("watch", ["build"], () => {
+    gulp.watch(paths.app, ["build"])
+});
 
-gulp.task("clean", done => del(["ngculator/dist/*"], done));
+gulp.task("clean", done => {
+    del(["ngculator/dist/*"], done)
+});
