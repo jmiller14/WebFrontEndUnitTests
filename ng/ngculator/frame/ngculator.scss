@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Eater');
+
 ngculator {
   $clear-button-margin: 0.2em;
 
@@ -5,3 +7,13 @@ ngculator {
     margin-top: $clear-button-margin;
   }
 }
+
+div.halloween {
+    * {
+      font-family: 'Eater', cursive;
+    }
+    background-image: url('http://www.clipartkid.com/images/159/by-heather-musick-published-september-27-2013-full-size-is-1600-x9YCGn-clipart.png');
+    background-size: 600px auto;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }

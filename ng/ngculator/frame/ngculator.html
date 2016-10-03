@@ -1,7 +1,11 @@
-<nc-display></nc-display>
-<nc-input></nc-input>
+<div ng-class="{halloween: $ctrl.halloweenFactory.isHalloween}">
+  <nc-display></nc-display>
+  <nc-input></nc-input>
 
-<nc-button-list></nc-button-list>
-<nc-number-pad></nc-number-pad>
-<br>
-<button id=clear-button ng-click="$ctrl.clear()">Clear</button>
+  <nc-button-list></nc-button-list>
+  <nc-number-pad></nc-number-pad>
+  <br/>
+  <button id=clear-button ng-click="$ctrl.clear()">Clear</button>
+  <br/>
+  <nc-spooky></nc-spooky>
+</div>

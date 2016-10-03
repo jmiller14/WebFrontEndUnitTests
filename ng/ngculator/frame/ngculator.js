@@ -5,7 +5,8 @@ import './ngculator.scss';
 
 const app = angular.module('ngculator');
 
-app.controller('NgculatorCtrl', function (calcHistory, calcInput) {
+app.controller('NgculatorCtrl', function (calcHistory, calcInput, halloweenFactory) {
+  this.halloweenFactory = halloweenFactory;
   this.clear = () => {
     calcHistory.clear();
     calcInput.clear();
